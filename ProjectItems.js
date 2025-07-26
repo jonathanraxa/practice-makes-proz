@@ -29,6 +29,7 @@ template.innerHTML = `
         ${projects.map(project => `
                 <h2 slot="title">${project.title}</h2>
                 <p slot="description">${project.description}</p>
+                <a href="${project.link}" target="_blank">View</a>
         `).join("")}
     </ul>
 `;
