@@ -1,20 +1,18 @@
-
 const projects = [
     {
         id: "p1",
-        title: "A title",
-        description: "A description",
+        title: "JavaScript Drum Kit",
+        description: "A drum kit built with JavaScript",
+        link: "./01_JavaScriptDrumKit/index-START.html"
     },
     {
-        id: "p1",
-        title: "A title",
-        description: "A description",
+        id: "p2",
+        title: "JavaScript and CSS Clock",
+        description: "",
+        link: "./02_JSandCSSClock/index-START.html"
     },
-    {
-        id: "p1",
-        title: "A title",
-        description: "A description",
-    },
+
+
 ];
 
 // what is template?

@@ -13,6 +13,10 @@
 
   <div class="keys">
     <div data-key="65" class="key">
+      <!-- what is kbd? -->
+      <!-- kbd is a keyboard key -->
+      <!-- it is used to display a keyboard key -->
+      <!-- it is a semantic element -->
       <kbd>A</kbd>
       <span class="sound">clap</span>
     </div>
@@ -68,15 +72,14 @@
       // what is the current time of the audio mean?
       // 0 means the audio will start from the beginning
       audio.currentTime = 0;
-
       // what is the play method?
       // it will play the audio from the current time
       audio.play();
-
-      // what is the key class?
-      // it is the class of the key that is pressed
       key.classList.add('playing');
-
+    });
+    document.addEventListener('keyup', function (e) {
+      const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+      key.classList.remove('playing');
     });
   </script>
 
