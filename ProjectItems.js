@@ -15,7 +15,7 @@ const projects = [
         id: "p3",
         title: "CSS Variables",
         description: "Dynamic CSS variables with JavaScript controls",
-        link: "./03 - CSS Variables/index-START.html"
+        link: "./03 _CSSVariables/index-START.html"
     },
     {
         id: "p4",
