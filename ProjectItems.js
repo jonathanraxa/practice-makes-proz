@@ -21,7 +21,7 @@ const projects = [
         id: "p4",
         title: "Array Cardio Day 1",
         description: "JavaScript array methods and data manipulation",
-        link: "./04 _ArrayCardioDay1"
+        link: "./04_ArrayCardioDay1/index-START.html"
     },
     {
         id: "p5",
