@@ -15,7 +15,7 @@ const projects = [
         id: "p3",
         title: "CSS Variables",
         description: "Dynamic CSS variables with JavaScript controls",
-        link: "./03 _CSSVariables/index-START.html"
+        link: "./03_CSSVariables/index-START.html"
     },
     {
         id: "p4",
@@ -27,7 +27,7 @@ const projects = [
         id: "p5",
         title: "Flex Panel Gallery",
         description: "Animated gallery using CSS flexbox",
-        link: "./05 - Flex Panel Gallery/index-START.html"
+        link: "./05_FlexPanelGallery/index-START.html"
     },
     {
         id: "p6",
