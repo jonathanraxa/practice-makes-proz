@@ -39,7 +39,7 @@ const projects = [
         id: "p7",
         title: "Array Cardio Day 2",
         description: "More advanced array methods and data processing",
-        link: "./07 - Array Cardio Day 2/index-START.html"
+        link: "./07_ArrayCardioDay2/index-START.html"
     },
     {
         id: "p8",

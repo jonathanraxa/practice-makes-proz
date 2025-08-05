@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Array Cardio 💪💪</title>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
   <script>
@@ -27,6 +29,12 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
+    const isTrueAdult = people.some((person) => {
+      const currYear = new Date();
+      const age = currYear.getFullYear() - person.year;
+      return age >= 19;
+    })
+    console.log(isTrueAdult);
     // Array.prototype.every() // is everyone 19 or older?
 
     // Array.prototype.find()
@@ -39,4 +47,5 @@
 
   </script>
 </body>
+
 </html>
