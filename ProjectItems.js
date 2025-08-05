@@ -33,7 +33,7 @@ const projects = [
         id: "p6",
         title: "Type Ahead",
         description: "Real-time search with type-ahead functionality",
-        link: "./06 - Type Ahead/index-START.html"
+        link: "./06_TypeAhead/index-START.html"
     },
     {
         id: "p7",
