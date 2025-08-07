@@ -45,13 +45,13 @@ const projects = [
         id: "p8",
         title: "Fun with HTML5 Canvas",
         description: "Interactive drawing with HTML5 Canvas",
-        link: "./08 - Fun with HTML5 Canvas/index-START.html"
+        link: "./08_FunwithHTML5Canvas/index-START.html"
     },
     {
         id: "p9",
         title: "Dev Tools Domination",
         description: "Mastering browser developer tools",
-        link: "./09 - Dev Tools Domination/index-START.html"
+        link: "./09_DevToolsDomination/index-START.html"
     },
     {
         id: "p10",
