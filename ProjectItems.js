@@ -57,7 +57,7 @@ const projects = [
         id: "p10",
         title: "Hold Shift and Check Checkboxes",
         description: "Multi-select functionality with shift key",
-        link: "./10 - Hold Shift and Check Checkboxes/index-START.html"
+        link: "./10_HoldShiftandCheckCheckboxes/index-START.html"
     },
     {
         id: "p11",

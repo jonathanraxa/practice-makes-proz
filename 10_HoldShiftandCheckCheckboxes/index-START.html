@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Hold Shift to Check Multiple Checkboxes</title>
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
+
 <body>
   <style>
-
     html {
       font-family: sans-serif;
       background: #ffc600;
@@ -18,7 +19,7 @@
       margin: 50px auto;
       background: white;
       border-radius: 5px;
-      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+      box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
     }
 
     .item {
@@ -31,7 +32,7 @@
       border-bottom: 0;
     }
 
-    input:checked + p {
+    input:checked+p {
       background: #F9F9F9;
       text-decoration: line-through;
     }
@@ -45,13 +46,13 @@
       padding: 20px;
       transition: background 0.2s;
       flex: 1;
-      font-family:'helvetica neue';
+      font-family: 'helvetica neue';
       font-size: 20px;
       font-weight: 200;
       border-left: 1px solid #D1E2FF;
     }
   </style>
-   <!--
+  <!--
    The following is a common layout you would see in an email client.
 
    When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
@@ -96,7 +97,58 @@
     </div>
   </div>
 
-<script>
-</script>
+  <script>
+    const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+    const list = Array.from(checkboxes);                 // for indexing in logs
+    const idxOf = el => list.indexOf(el);
+
+    let lastChecked = null;
+
+    function handleCheck(e) {
+      console.clear();
+      console.log('──────── CLICK ────────');
+      console.log(`clicked index=${idxOf(this)} checked=${this.checked} shift=${e.shiftKey}`);
+      if (lastChecked) {
+        console.log(`lastChecked index=${idxOf(lastChecked)}`);
+      } else {
+        console.log('lastChecked is null (no prior anchor yet)');
+      }
+
+      let inBetween = false;
+
+      if (e.shiftKey && this.checked && lastChecked) {
+        console.log('→ Doing range selection (shift held AND current is checked).');
+        list.forEach((checkbox, i) => {
+          const isBoundary = (checkbox === this) || (checkbox === lastChecked);
+
+          if (isBoundary) {
+            inBetween = !inBetween;                      // flip when we hit either boundary
+            console.log(
+              `%cT O G G L E  at i=${i} (${checkbox === this ? 'current' : 'last'})  → inBetween=${inBetween}`,
+              'font-weight:bold;'
+            );
+          } else {
+            console.log(`i=${i} inBetween=${inBetween}${inBetween ? '  → will check' : ''}`);
+          }
+
+          if (inBetween) {
+            // mirror original behavior: only checks (doesn't uncheck)
+            checkbox.checked = true;
+          }
+        });
+      } else {
+        console.log('→ No range selection (either no Shift, you un-checked, or no lastChecked yet).');
+      }
+
+      // Anchor this click for next time
+      lastChecked = this;
+      console.log(`Set lastChecked = index ${idxOf(this)}`);
+      console.log('──────── END ────────');
+    }
+
+    list.forEach(cb => cb.addEventListener('click', handleCheck));
+  </script>
+
 </body>
+
 </html>
